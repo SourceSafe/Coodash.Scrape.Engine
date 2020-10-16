@@ -26,7 +26,7 @@ namespace Coodash.Scrape.Main
             _engine.NewsArticleParsed += _engine_NewsArticleParsed;
             _engine.Start(_threadCount);
 
-            /*
+            
             // using System.Net;
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -42,7 +42,7 @@ namespace Coodash.Scrape.Main
             //Parse AFME 
             _engine.AddToQueue(new AFMEDataScrapeNavigation(AFMEDataURL, _pageCount, _engine));
             _engine.AddToQueue(new AFMEDataScrapeNavigation(AFMEPublicationsURL, _pageCount, _engine));
-            */
+            
             _engine.AddToQueue(new AFMENewsScrapeNavigation(AFMENewsURL, _pageCount, _engine));
 
         }
