@@ -22,6 +22,7 @@ namespace Coodash.Scrape.Main
                         
         static void Main(string[] args)
         {
+            //Add commnet
             ScrapeEngine _engine = new ScrapeEngine();
             _engine.NewsArticleParsed += _engine_NewsArticleParsed;
             _engine.Start(_threadCount);
