@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F28440E6-102E-4DF9-AEA1-5BFC01424CDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coodash.Scape.Scrapers</RootNamespace>
+    <AssemblyName>Coodash.Scape.Scrapers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.24.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.24\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AFME\AFMEADataScrapeArticle.cs" />
+    <Compile Include="AFME\AFMEDataScrapePage.cs" />
+    <Compile Include="AFME_Press_Release\AFMEANewsScrapeArticle.cs" />
+    <Compile Include="AFME_Press_Release\AFMENewsScrapePage.cs" />
+    <Compile Include="AFME_Press_Release\AFMENewsScrapeNavigation.cs" />
+    <Compile Include="ESMA_Publication\ESMAPublicationScrapeSummary.cs" />
+    <Compile Include="AFME\AFMEDataScrapeNavigation.cs" />
+    <Compile Include="ESMA_Publication\ESMAPublicationScrapeNavigation.cs" />
+    <Compile Include="ESMA_News\ESMANewsScrapeArticle.cs" />
+    <Compile Include="ESMA_News\ESMANewsScrapePage.cs" />
+    <Compile Include="ESMA_News\ESMANewsScrapeNewsNavigation.cs" />
+    <Compile Include="FCA\FCAScrapeArticle.cs" />
+    <Compile Include="FCA\FCAScrapePage.cs" />
+    <Compile Include="FCA\FCAScrapePages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coodash.Scrape.Common\Coodash.Scrape.Common.csproj">
+      <Project>{c7406a94-469b-42a9-802d-431ecd3a7857}</Project>
+      <Name>Coodash.Scrape.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Coodash.Scrape.Engine\Coodash.Scrape.Engine.csproj">
+      <Project>{c76ba095-a998-45a8-a624-842fc0d8105a}</Project>
+      <Name>Coodash.Scrape.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
