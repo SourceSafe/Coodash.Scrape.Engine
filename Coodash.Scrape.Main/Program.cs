@@ -10,7 +10,7 @@ namespace Coodash.Scrape.Main
     class Program
     {
         private static int _threadCount = 1;
-        private static int _pageCount = 1;
+        private static int _pageCount = 10;
         private static string FCASearchResultsURL = "https://www.fca.org.uk/news/search-results";
         private static string FCAPublicationsURL = "https://www.fca.org.uk/publications/search-results";
         private static string ESMANewsURL = "https://www.esma.europa.eu/press-news/esma-news";

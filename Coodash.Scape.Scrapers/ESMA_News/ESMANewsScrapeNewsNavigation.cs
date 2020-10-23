@@ -11,8 +11,7 @@ namespace Coodash.Scrape.Scrapers
     public class ESMANewsScrapeNewsNavigation : IWorkerItem
     {
         private string _url;
-        private int _pageScrapeCount;
-        private int articlesPerPage = 10;
+        private int _pageScrapeCount;        
         private ScrapeEngine _engine;
         private string _pageFormat = "{0}?page={1}";
 
@@ -28,7 +27,7 @@ namespace Coodash.Scrape.Scrapers
             try
             {
                 //Generate a ESMAScrapePage for each page needed
-                for (int queryParam = 1; queryParam < _pageScrapeCount * articlesPerPage; queryParam += articlesPerPage)
+                for (int queryParam = 0; queryParam < _pageScrapeCount; queryParam++)
                     _engine.AddToQueue(new ESMANewsScrapePage(string.Format(_pageFormat, _url, queryParam), _engine));
             }
             catch(Exception ex)

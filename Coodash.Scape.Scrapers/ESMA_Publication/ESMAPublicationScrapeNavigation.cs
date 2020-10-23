@@ -28,7 +28,7 @@ namespace Coodash.Scrape.Scrapers
             try
             {
                 //Generate a ESMAScrapePage for each page needed
-                for (int queryParam = 1; queryParam < _pageScrapeCount * articlesPerPage; queryParam += articlesPerPage)
+                for (int queryParam = 0; queryParam < articlesPerPage; queryParam++)
                     _engine.AddToQueue(new ESMAPublicationScrapeSummary(string.Format(_pageFormat, _url, queryParam), _engine));
             }
             catch(Exception ex)

@@ -21,12 +21,12 @@ namespace Coodash.Scrape.Scrapers
         public ESMAPublicationScrapeSummary(string pageURL, ScrapeEngine engine)
         {
              _web=  new HtmlWeb();
-            _pageURL = pageURL;
+            _pageURL = pageURL;            
             _engine = engine;
         }
 
         public void Work()
-        {            
+        {             
             try
             {
                            
